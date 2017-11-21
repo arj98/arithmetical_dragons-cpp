@@ -2,6 +2,7 @@
 #include <sstream>
 #include <cstdlib>
 #include <list>
+#include <ctime>
 
 #include "unit.h"
 #include "hero.h"
@@ -57,6 +58,8 @@ bool playGame(Hero &hero, list<Dragon*> &dragons)
 
 int main()
 {
+    time_t seconds = time(NULL);
+    srand(seconds);
     Hero hero;
     list<Dragon*> dragons = generateDragonList();
     bool gameResult = playGame(hero, dragons);
